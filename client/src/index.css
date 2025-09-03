@@ -159,6 +159,25 @@
   .bg-cream-blue {
     background-color: hsla(205, 25%, 92%, 0.6);
   }
+  
+  .testimonials-pattern {
+    position: relative;
+  }
+  
+  .testimonials-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.06;
+    background-image: url('@assets/fleur-de-lis-pattern.png');
+    background-repeat: repeat;
+    background-size: 130px 130px;
+    pointer-events: none;
+  }
 
   .decorative-pattern {
     position: relative;

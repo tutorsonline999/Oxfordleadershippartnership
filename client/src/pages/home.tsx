@@ -340,7 +340,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-20 bg-background fleur-pattern-bg">
+      <section id="testimonials" className="py-20 bg-background testimonials-pattern">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block border-2 border-light-gold px-8 py-4 mb-6">
