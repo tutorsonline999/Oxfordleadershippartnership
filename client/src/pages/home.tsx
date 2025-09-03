@@ -240,7 +240,7 @@ export default function Home() {
                   <img 
                     src={kittyMcWilliamImg} 
                     alt="Kitty McWilliam" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                     data-testid="img-coach-kitty"
                   />
                 </div>
