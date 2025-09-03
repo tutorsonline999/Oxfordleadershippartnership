@@ -10,7 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "@/component
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
-import { Menu, X, ArrowRight, Quote, Mountain, MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
+import { Menu, X, ArrowRight, Quote, Bus, MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
 import oxfordSkylineImg from "@/assets/oxford-skyline.jpg";
 import benSchubertImg from "@/assets/ben-schubert.jpg";
 import kittyMcWilliamImg from "@/assets/kitty-mcwilliam.jpg";
@@ -187,7 +187,6 @@ export default function Home() {
             backgroundImage: `url(${oxfordSkylineImg})`
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-800 via-blue-600/40 to-slate-400/20"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 text-balance" data-testid="text-hero-title">
             The Oxford Coaching Partnership
@@ -277,7 +276,7 @@ export default function Home() {
             <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1" data-testid="card-service-executive">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <Mountain className="text-2xl text-primary w-8 h-8" />
+                  <Bus className="text-2xl text-primary w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-serif font-semibold text-primary mb-4" data-testid="text-service-executive-title">
                   Executive Coaching
