@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 import { Menu, X, ArrowRight, Quote, Bus, MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
+import oxfordSkylineImg from "@/assets/oxford-skyline.jpg";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const contactFormSchema = z.object({
@@ -185,7 +186,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
           style={{
-            backgroundImage: "url('/attached_assets/Oxford_Skyline_Panorama_from_St_Mary's_Church_-_Oct_2006 2_1756894552152.jpg')"
+            backgroundImage: `url(${oxfordSkylineImg})`
           }}
         />
         <div className="hero-overlay absolute inset-0"></div>
