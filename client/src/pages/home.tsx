@@ -178,7 +178,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Banner */}
-      <section className="relative h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center text-center -mt-20">
+      <section className="relative h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center text-center -mt-20 bg-gray-100">
         <div 
           className="absolute inset-0 bg-contain bg-center bg-no-repeat" 
           style={{
