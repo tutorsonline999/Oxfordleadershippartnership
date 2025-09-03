@@ -120,13 +120,13 @@
   
   .decorative-pattern {
     background-image: 
-      radial-gradient(circle at 25% 25%, hsla(215, 100%, 13%, 0.008) 2px, transparent 2px),
-      radial-gradient(circle at 75% 25%, hsla(215, 100%, 13%, 0.008) 2px, transparent 2px),
-      radial-gradient(circle at 25% 75%, hsla(215, 100%, 13%, 0.008) 2px, transparent 2px),
-      radial-gradient(circle at 75% 75%, hsla(215, 100%, 13%, 0.008) 2px, transparent 2px),
-      radial-gradient(circle at 50% 50%, hsla(215, 100%, 13%, 0.006) 3px, transparent 3px),
-      linear-gradient(45deg, transparent 30%, hsla(215, 100%, 13%, 0.004) 32%, hsla(215, 100%, 13%, 0.004) 34%, transparent 36%),
-      linear-gradient(-45deg, transparent 30%, hsla(215, 100%, 13%, 0.004) 32%, hsla(215, 100%, 13%, 0.004) 34%, transparent 36%);
+      radial-gradient(circle at 25% 25%, hsla(215, 100%, 13%, 0.015) 2px, transparent 2px),
+      radial-gradient(circle at 75% 25%, hsla(215, 100%, 13%, 0.015) 2px, transparent 2px),
+      radial-gradient(circle at 25% 75%, hsla(215, 100%, 13%, 0.015) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, hsla(215, 100%, 13%, 0.015) 2px, transparent 2px),
+      radial-gradient(circle at 50% 50%, hsla(215, 100%, 13%, 0.012) 3px, transparent 3px),
+      linear-gradient(45deg, transparent 30%, hsla(215, 100%, 13%, 0.008) 32%, hsla(215, 100%, 13%, 0.008) 34%, transparent 36%),
+      linear-gradient(-45deg, transparent 30%, hsla(215, 100%, 13%, 0.008) 32%, hsla(215, 100%, 13%, 0.008) 34%, transparent 36%);
     background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px, 80px 80px, 80px 80px, 80px 80px;
     background-position: 0 0, 0 0, 0 0, 0 0, 20px 20px, 0 0, 0 0;
   }
