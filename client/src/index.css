@@ -155,6 +155,10 @@
     background-size: 120px 120px;
     pointer-events: none;
   }
+  
+  .bg-cream-blue {
+    background-color: hsla(205, 25%, 92%, 0.6);
+  }
 
   .decorative-pattern {
     position: relative;
