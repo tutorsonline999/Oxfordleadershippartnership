@@ -130,15 +130,26 @@
     right: 0;
     bottom: 0;
     z-index: -1;
+    opacity: 0.015;
     background-image: 
-      radial-gradient(circle at 25% 25%, hsla(215, 100%, 13%, 0.035) 2px, transparent 2px),
-      radial-gradient(circle at 75% 25%, hsla(215, 100%, 13%, 0.035) 2px, transparent 2px),
-      radial-gradient(circle at 25% 75%, hsla(215, 100%, 13%, 0.035) 2px, transparent 2px),
-      radial-gradient(circle at 75% 75%, hsla(215, 100%, 13%, 0.035) 2px, transparent 2px),
-      radial-gradient(circle at 50% 50%, hsla(215, 100%, 13%, 0.028) 3px, transparent 3px),
-      linear-gradient(45deg, transparent 30%, hsla(215, 100%, 13%, 0.022) 32%, hsla(215, 100%, 13%, 0.022) 34%, transparent 36%),
-      linear-gradient(-45deg, transparent 30%, hsla(215, 100%, 13%, 0.022) 32%, hsla(215, 100%, 13%, 0.022) 34%, transparent 36%);
-    background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px, 80px 80px, 80px 80px, 80px 80px;
-    background-position: 0 0, 0 0, 0 0, 0 0, 20px 20px, 0 0, 0 0;
+      /* Fleur-de-lis inspired shapes */
+      radial-gradient(ellipse 3px 8px at 50% 30%, hsla(215, 100%, 13%, 1) 0%, hsla(215, 100%, 13%, 1) 40%, transparent 41%),
+      radial-gradient(ellipse 2px 4px at 35% 45%, hsla(215, 100%, 13%, 1) 0%, hsla(215, 100%, 13%, 1) 50%, transparent 51%),
+      radial-gradient(ellipse 2px 4px at 65% 45%, hsla(215, 100%, 13%, 1) 0%, hsla(215, 100%, 13%, 1) 50%, transparent 51%),
+      radial-gradient(ellipse 6px 3px at 50% 60%, hsla(215, 100%, 13%, 1) 0%, hsla(215, 100%, 13%, 1) 40%, transparent 41%),
+      /* Small diamond accents */
+      linear-gradient(45deg, transparent 45%, hsla(215, 100%, 13%, 1) 47%, hsla(215, 100%, 13%, 1) 53%, transparent 55%),
+      linear-gradient(-45deg, transparent 45%, hsla(215, 100%, 13%, 1) 47%, hsla(215, 100%, 13%, 1) 53%, transparent 55%),
+      /* Tiny dots for texture */
+      radial-gradient(circle at 25% 25%, hsla(215, 100%, 13%, 1) 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, hsla(215, 100%, 13%, 1) 0.5px, transparent 0.5px);
+    background-size: 
+      60px 60px, 60px 60px, 60px 60px, 60px 60px,
+      8px 8px, 8px 8px,
+      120px 120px, 120px 120px;
+    background-position: 
+      30px 20px, 30px 20px, 30px 20px, 30px 20px,
+      45px 35px, 45px 35px,
+      0 0, 60px 60px;
   }
 }
