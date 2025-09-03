@@ -99,7 +99,7 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
-
+  
   html {
     scroll-behavior: smooth;
   }
@@ -109,27 +109,16 @@
   .hero-overlay {
     background: linear-gradient(135deg, hsla(215, 100%, 13%, 0.85) 0%, hsla(215, 100%, 13%, 0.65) 100%);
   }
-
+  
   .text-balance {
     text-wrap: balance;
   }
-
+  
   .border-light-gold {
     border-color: hsl(38, 45%, 65%);
   }
-
+  
   .decorative-pattern {
-    position: relative;
-  }
-
-  .decorative-pattern::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
     background-image: 
       radial-gradient(circle at 25% 25%, hsla(215, 100%, 13%, 0.035) 2px, transparent 2px),
       radial-gradient(circle at 75% 25%, hsla(215, 100%, 13%, 0.035) 2px, transparent 2px),
