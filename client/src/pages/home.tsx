@@ -185,7 +185,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1520637836862-4d197d17c55a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"
+            backgroundImage: "url('/attached_assets/Oxford_Skyline_Panorama_from_St_Mary's_Church_-_Oct_2006 2_1756894552152.jpg')"
           }}
         />
         <div className="hero-overlay absolute inset-0"></div>
