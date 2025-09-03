@@ -427,7 +427,7 @@ export default function Home() {
             onClick={() => scrollToSection('contact')}
             data-testid="button-contact-us"
           >
-            Contact Us Today
+            Contact Us
           </Button>
         </div>
       </section>
