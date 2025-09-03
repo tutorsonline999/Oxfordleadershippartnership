@@ -182,9 +182,9 @@ export default function Home() {
       </nav>
 
       {/* Hero Banner */}
-      <section className="relative h-screen flex items-center justify-center text-center">
+      <section className="relative h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center text-center">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+          className="absolute inset-0 bg-contain bg-center bg-no-repeat" 
           style={{
             backgroundImage: `url(${oxfordSkylineImg})`
           }}
