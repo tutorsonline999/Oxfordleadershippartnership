@@ -182,7 +182,7 @@ export default function Home() {
       {/* Hero Banner */}
       <section className="relative h-[500px] md:h-[650px] lg:h-[750px] flex items-center justify-center text-center -mt-20 bg-gray-100">
         <div 
-          className="absolute inset-0 bg-contain bg-center bg-no-repeat" 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
           style={{
             backgroundImage: `url(${oxfordSkylineImg})`
           }}
