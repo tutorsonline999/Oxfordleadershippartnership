@@ -13,6 +13,7 @@ import { useMutation } from "@tanstack/react-query";
 import { Menu, X, ArrowRight, Quote, Bus, MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
 import oxfordSkylineImg from "@/assets/oxford-skyline.jpg";
 import benSchubertImg from "@/assets/ben-schubert.jpg";
+import kittyMcWilliamImg from "@/assets/kitty-mcwilliam.jpg";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const contactFormSchema = z.object({
@@ -237,7 +238,7 @@ export default function Home() {
               <CardContent className="p-8">
                 <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
                   <img 
-                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                    src={kittyMcWilliamImg} 
                     alt="Kitty McWilliam" 
                     className="w-full h-full object-cover"
                     data-testid="img-coach-kitty"
