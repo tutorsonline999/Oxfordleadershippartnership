@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 import { Menu, X, ArrowRight, Quote, Bus, MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const contactFormSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -344,78 +345,90 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <Card data-testid="card-testimonial-1">
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
-                  <p className="text-muted-foreground leading-relaxed italic" data-testid="text-testimonial-1-quote">
-                    "The coaching sessions provided me with invaluable insights into my leadership style and helped me navigate a complex organizational restructure with confidence."
-                  </p>
-                </div>
-                <div className="flex items-center">
-                  <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
-                    alt="Client testimonial" 
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                    data-testid="img-testimonial-1"
-                  />
-                  <div>
-                    <p className="font-semibold text-foreground" data-testid="text-testimonial-1-name">James Richardson</p>
-                    <p className="text-sm text-muted-foreground" data-testid="text-testimonial-1-title">CEO, Financial Services</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Testimonial 2 */}
-            <Card data-testid="card-testimonial-2">
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
-                  <p className="text-muted-foreground leading-relaxed italic" data-testid="text-testimonial-2-quote">
-                    "Working with The Oxford Coaching Partnership was transformational. Their approach is both deeply professional and genuinely supportive."
-                  </p>
-                </div>
-                <div className="flex items-center">
-                  <img 
-                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
-                    alt="Client testimonial" 
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                    data-testid="img-testimonial-2"
-                  />
-                  <div>
-                    <p className="font-semibold text-foreground" data-testid="text-testimonial-2-name">Sarah Mitchell</p>
-                    <p className="text-sm text-muted-foreground" data-testid="text-testimonial-2-title">Director, Healthcare</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Testimonial 3 */}
-            <Card data-testid="card-testimonial-3">
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
-                  <p className="text-muted-foreground leading-relaxed italic" data-testid="text-testimonial-3-quote">
-                    "The walking coaching sessions were particularly effective - the combination of movement and conversation unlocked new perspectives I hadn't considered."
-                  </p>
-                </div>
-                <div className="flex items-center">
-                  <img 
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
-                    alt="Client testimonial" 
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                    data-testid="img-testimonial-3"
-                  />
-                  <div>
-                    <p className="font-semibold text-foreground" data-testid="text-testimonial-3-name">Michael Thompson</p>
-                    <p className="text-sm text-muted-foreground" data-testid="text-testimonial-3-title">Managing Partner, Consulting</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="max-w-4xl mx-auto">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {/* Testimonial 1 */}
+                <CarouselItem>
+                  <Card data-testid="card-testimonial-1">
+                    <CardContent className="p-8">
+                      <div className="mb-6">
+                        <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
+                        <p className="text-muted-foreground leading-relaxed italic text-lg" data-testid="text-testimonial-1-quote">
+                          "The coaching sessions provided me with invaluable insights into my leadership style and helped me navigate a complex organizational restructure with confidence."
+                        </p>
+                      </div>
+                      <div className="flex items-center justify-center">
+                        <img 
+                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                          alt="Client testimonial" 
+                          className="w-12 h-12 rounded-full object-cover mr-4"
+                          data-testid="img-testimonial-1"
+                        />
+                        <div>
+                          <p className="font-semibold text-foreground" data-testid="text-testimonial-1-name">James Richardson</p>
+                          <p className="text-sm text-muted-foreground" data-testid="text-testimonial-1-title">CEO, Financial Services</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+                
+                {/* Testimonial 2 */}
+                <CarouselItem>
+                  <Card data-testid="card-testimonial-2">
+                    <CardContent className="p-8">
+                      <div className="mb-6">
+                        <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
+                        <p className="text-muted-foreground leading-relaxed italic text-lg" data-testid="text-testimonial-2-quote">
+                          "Working with The Oxford Coaching Partnership was transformational. Their approach is both deeply professional and genuinely supportive."
+                        </p>
+                      </div>
+                      <div className="flex items-center justify-center">
+                        <img 
+                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                          alt="Client testimonial" 
+                          className="w-12 h-12 rounded-full object-cover mr-4"
+                          data-testid="img-testimonial-2"
+                        />
+                        <div>
+                          <p className="font-semibold text-foreground" data-testid="text-testimonial-2-name">Sarah Mitchell</p>
+                          <p className="text-sm text-muted-foreground" data-testid="text-testimonial-2-title">Director, Healthcare</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+                
+                {/* Testimonial 3 */}
+                <CarouselItem>
+                  <Card data-testid="card-testimonial-3">
+                    <CardContent className="p-8">
+                      <div className="mb-6">
+                        <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
+                        <p className="text-muted-foreground leading-relaxed italic text-lg" data-testid="text-testimonial-3-quote">
+                          "The walking coaching sessions were particularly effective - the combination of movement and conversation unlocked new perspectives I hadn't considered."
+                        </p>
+                      </div>
+                      <div className="flex items-center justify-center">
+                        <img 
+                          src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                          alt="Client testimonial" 
+                          className="w-12 h-12 rounded-full object-cover mr-4"
+                          data-testid="img-testimonial-3"
+                        />
+                        <div>
+                          <p className="font-semibold text-foreground" data-testid="text-testimonial-3-name">Michael Thompson</p>
+                          <p className="text-sm text-muted-foreground" data-testid="text-testimonial-3-title">Managing Partner, Consulting</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </section>
