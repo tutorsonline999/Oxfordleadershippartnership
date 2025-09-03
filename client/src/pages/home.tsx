@@ -189,7 +189,7 @@ export default function Home() {
             The Oxford Coaching Partnership
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed" data-testid="text-hero-tagline">
-            Empowering leaders through expert coaching and Oxford values
+            EMPOWERING PEOPLE TO LEAD WITH CLARITY, CONFIDENCE, AND PURPOSE.
           </p>
         </div>
       </section>
