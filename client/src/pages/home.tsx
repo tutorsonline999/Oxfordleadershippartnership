@@ -99,7 +99,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50">
         <div className="max-w-6xl mx-auto px-0 sm:px-2 lg:px-4">
           <div className="flex justify-between items-center py-4">
-            <div className="flex-shrink-0 pl-1">
+            <div className="flex-shrink-0">
               <h1 className="text-lg font-semibold text-primary text-left" style={{ fontFamily: 'Montserrat, sans-serif' }}>The Oxford Coaching Partnership</h1>
             </div>
             <div className="hidden md:flex space-x-8">
