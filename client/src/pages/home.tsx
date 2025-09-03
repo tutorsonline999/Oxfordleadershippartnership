@@ -187,7 +187,7 @@ export default function Home() {
             backgroundImage: `url(${oxfordSkylineImg})`
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-90% via-background/10 via-97% to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% via-background/5 via-92% via-background/20 via-96% to-background"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 text-balance" data-testid="text-hero-title">
             The Oxford Coaching Partnership
