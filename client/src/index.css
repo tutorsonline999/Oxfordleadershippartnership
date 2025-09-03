@@ -130,10 +130,10 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    opacity: 0.15;
+    opacity: 0.6;
     background-image: url('@assets/fleur-de-lis-pattern.png');
     background-repeat: repeat;
-    background-size: 150px 150px;
+    background-size: 100px 100px;
     pointer-events: none;
   }
 
