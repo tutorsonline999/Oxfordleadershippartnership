@@ -1,0 +1,595 @@
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
+import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
+import { useMutation } from "@tanstack/react-query";
+import { Menu, X, ArrowRight, Quote, Bus, MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
+
+const contactFormSchema = z.object({
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().optional(),
+  message: z.string().min(10, "Please provide more details about your coaching needs"),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
+
+export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { toast } = useToast();
+
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
+  });
+
+  const contactMutation = useMutation({
+    mutationFn: async (data: ContactFormData) => {
+      return apiRequest("POST", "/api/contact", data);
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      form.reset();
+    },
+    onError: () => {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const onSubmit = (data: ContactFormData) => {
+    contactMutation.mutate(data);
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector('nav');
+      if (navbar) {
+        if (window.scrollY > 50) {
+          navbar.classList.add('backdrop-blur-md');
+        } else {
+          navbar.classList.remove('backdrop-blur-md');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-background text-foreground font-sans antialiased">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <div className="flex-shrink-0">
+              <h1 className="text-xl font-serif font-semibold text-primary">The Oxford Coaching Partnership</h1>
+            </div>
+            <div className="hidden md:flex space-x-8">
+              <button 
+                onClick={() => scrollToSection('about')} 
+                className="text-foreground hover:text-primary transition-colors"
+                data-testid="nav-about"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => scrollToSection('services')} 
+                className="text-foreground hover:text-primary transition-colors"
+                data-testid="nav-services"
+              >
+                Services
+              </button>
+              <button 
+                onClick={() => scrollToSection('testimonials')} 
+                className="text-foreground hover:text-primary transition-colors"
+                data-testid="nav-testimonials"
+              >
+                Testimonials
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="text-foreground hover:text-primary transition-colors"
+                data-testid="nav-contact"
+              >
+                Contact
+              </button>
+            </div>
+            <button 
+              className="md:hidden p-2" 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              data-testid="button-mobile-menu"
+            >
+              {isMenuOpen ? <X className="text-primary" /> : <Menu className="text-primary" />}
+            </button>
+          </div>
+          
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="md:hidden pb-4">
+              <div className="flex flex-col space-y-2">
+                <button 
+                  onClick={() => scrollToSection('about')} 
+                  className="text-left text-foreground hover:text-primary transition-colors py-2"
+                  data-testid="nav-mobile-about"
+                >
+                  About
+                </button>
+                <button 
+                  onClick={() => scrollToSection('services')} 
+                  className="text-left text-foreground hover:text-primary transition-colors py-2"
+                  data-testid="nav-mobile-services"
+                >
+                  Services
+                </button>
+                <button 
+                  onClick={() => scrollToSection('testimonials')} 
+                  className="text-left text-foreground hover:text-primary transition-colors py-2"
+                  data-testid="nav-mobile-testimonials"
+                >
+                  Testimonials
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contact')} 
+                  className="text-left text-foreground hover:text-primary transition-colors py-2"
+                  data-testid="nav-mobile-contact"
+                >
+                  Contact
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
+
+      {/* Hero Banner */}
+      <section className="relative h-screen flex items-center justify-center text-center">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1520637836862-4d197d17c55a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"
+          }}
+        />
+        <div className="hero-overlay absolute inset-0"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 text-balance" data-testid="text-hero-title">
+            The Oxford Coaching Partnership
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed" data-testid="text-hero-tagline">
+            Empowering leaders through expert coaching and Oxford values
+          </p>
+          <Button 
+            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl"
+            onClick={() => scrollToSection('contact')}
+            data-testid="button-discovery-call"
+          >
+            Arrange a Discovery Call
+          </Button>
+        </div>
+      </section>
+
+      {/* Who We Are */}
+      <section id="about" className="py-20 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6" data-testid="text-about-title">Who We Are</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" data-testid="text-about-description">
+              We are a team that specialises in coaching, mentoring, and organisational development.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+            {/* Dr Ben Schubert */}
+            <Card className="hover:shadow-lg transition-shadow" data-testid="card-coach-ben">
+              <CardContent className="p-8">
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
+                  <img 
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                    alt="Dr Ben Schubert" 
+                    className="w-full h-full object-cover"
+                    data-testid="img-coach-ben"
+                  />
+                </div>
+                <h3 className="text-2xl font-serif font-semibold text-primary mb-4 text-center" data-testid="text-coach-ben-name">
+                  Dr Ben Schubert
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-6" data-testid="text-coach-ben-bio">
+                  I believe everyone deserves to be successful and fulfilled in their work. I work with leaders at pivotal moments in their professional lives - whether they are navigating career transitions, managing complex organisational challenges, or seeking alignment between their career and personal life. Through coaching, I help my clients unlock clarity, resilience, and direction.
+                </p>
+                <div className="text-center">
+                  <button className="text-primary hover:text-secondary font-medium transition-colors border-b border-transparent hover:border-primary inline-flex items-center gap-1" data-testid="button-ben-profile">
+                    See the full coaching profile here <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Kitty McWilliam */}
+            <Card className="hover:shadow-lg transition-shadow" data-testid="card-coach-kitty">
+              <CardContent className="p-8">
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
+                  <img 
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                    alt="Kitty McWilliam" 
+                    className="w-full h-full object-cover"
+                    data-testid="img-coach-kitty"
+                  />
+                </div>
+                <h3 className="text-2xl font-serif font-semibold text-primary mb-4 text-center" data-testid="text-coach-kitty-name">
+                  Kitty McWilliam
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-6" data-testid="text-coach-kitty-bio">
+                  I combine experience from diverse sectors—including higher education, healthcare, and global business—with a passion for enabling people to flourish. I believe that when people feel supported and empowered, they not only grow as individuals but also strengthen the teams and organisations around them.
+                </p>
+                <div className="text-center">
+                  <button className="text-primary hover:text-secondary font-medium transition-colors border-b border-transparent hover:border-primary inline-flex items-center gap-1" data-testid="button-kitty-profile">
+                    See the full coaching profile here <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Offer */}
+      <section id="services" className="py-20 bg-muted/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6" data-testid="text-services-title">What We Offer</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" data-testid="text-services-description">
+              Comprehensive coaching solutions tailored to your leadership journey
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            {/* Executive Coaching */}
+            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1" data-testid="card-service-executive">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                  <Bus className="text-2xl text-primary w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-serif font-semibold text-primary mb-4" data-testid="text-service-executive-title">
+                  Executive Coaching
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-6" data-testid="text-service-executive-description">
+                  We offer online as well as in-person coaching for executives at all levels to help them master the challenges in their professional personal lives.
+                </p>
+                <button className="text-primary hover:text-secondary font-medium transition-colors inline-flex items-center gap-1" data-testid="button-executive-learn-more">
+                  Learn more <ArrowRight className="w-4 h-4" />
+                </button>
+              </CardContent>
+            </Card>
+            
+            {/* Walking Coaching */}
+            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1" data-testid="card-service-walking">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L5 8.3V13h2V9.6l1.8-.7"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-serif font-semibold text-primary mb-4" data-testid="text-service-walking-title">
+                  Walking Coaching
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-6" data-testid="text-service-walking-description">
+                  Some people think better when they are walking and talking. There is something to be said about moving together in the same direction.
+                </p>
+                <button className="text-primary hover:text-secondary font-medium transition-colors inline-flex items-center gap-1" data-testid="button-walking-learn-more">
+                  Learn more <ArrowRight className="w-4 h-4" />
+                </button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section id="testimonials" className="py-20 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6" data-testid="text-testimonials-title">What Our Clients Say</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" data-testid="text-testimonials-description">
+              Transformative coaching experiences that drive real results
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <Card data-testid="card-testimonial-1">
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
+                  <p className="text-muted-foreground leading-relaxed italic" data-testid="text-testimonial-1-quote">
+                    "The coaching sessions provided me with invaluable insights into my leadership style and helped me navigate a complex organizational restructure with confidence."
+                  </p>
+                </div>
+                <div className="flex items-center">
+                  <img 
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                    alt="Client testimonial" 
+                    className="w-12 h-12 rounded-full object-cover mr-4"
+                    data-testid="img-testimonial-1"
+                  />
+                  <div>
+                    <p className="font-semibold text-foreground" data-testid="text-testimonial-1-name">James Richardson</p>
+                    <p className="text-sm text-muted-foreground" data-testid="text-testimonial-1-title">CEO, Financial Services</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Testimonial 2 */}
+            <Card data-testid="card-testimonial-2">
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
+                  <p className="text-muted-foreground leading-relaxed italic" data-testid="text-testimonial-2-quote">
+                    "Working with The Oxford Coaching Partnership was transformational. Their approach is both deeply professional and genuinely supportive."
+                  </p>
+                </div>
+                <div className="flex items-center">
+                  <img 
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                    alt="Client testimonial" 
+                    className="w-12 h-12 rounded-full object-cover mr-4"
+                    data-testid="img-testimonial-2"
+                  />
+                  <div>
+                    <p className="font-semibold text-foreground" data-testid="text-testimonial-2-name">Sarah Mitchell</p>
+                    <p className="text-sm text-muted-foreground" data-testid="text-testimonial-2-title">Director, Healthcare</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Testimonial 3 */}
+            <Card data-testid="card-testimonial-3">
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
+                  <p className="text-muted-foreground leading-relaxed italic" data-testid="text-testimonial-3-quote">
+                    "The walking coaching sessions were particularly effective - the combination of movement and conversation unlocked new perspectives I hadn't considered."
+                  </p>
+                </div>
+                <div className="flex items-center">
+                  <img 
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                    alt="Client testimonial" 
+                    className="w-12 h-12 rounded-full object-cover mr-4"
+                    data-testid="img-testimonial-3"
+                  />
+                  <div>
+                    <p className="font-semibold text-foreground" data-testid="text-testimonial-3-name">Michael Thompson</p>
+                    <p className="text-sm text-muted-foreground" data-testid="text-testimonial-3-title">Managing Partner, Consulting</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* How to Work With Us */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6" data-testid="text-work-with-us-title">How to Work With Us</h2>
+          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed" data-testid="text-work-with-us-description">
+            Contact Ben or Kitty to arrange a free and confidential discovery session to discuss how we might work together.
+          </p>
+          <Button 
+            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 py-4 text-lg shadow-lg"
+            onClick={() => scrollToSection('contact')}
+            data-testid="button-contact-us"
+          >
+            Contact Us Today
+          </Button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="contact" className="py-16 bg-muted/30 border-t border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <div>
+              <h3 className="text-2xl font-serif font-semibold text-primary mb-6" data-testid="text-contact-title">Get in Touch</h3>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <Mail className="text-secondary mr-3 w-5 h-5" />
+                  <span className="text-muted-foreground" data-testid="text-contact-email">info@oxfordcoachingpartnership.com</span>
+                </div>
+                <div className="flex items-center">
+                  <Phone className="text-secondary mr-3 w-5 h-5" />
+                  <span className="text-muted-foreground" data-testid="text-contact-phone">+44 1865 123 456</span>
+                </div>
+                <div className="flex items-center">
+                  <MapPin className="text-secondary mr-3 w-5 h-5" />
+                  <span className="text-muted-foreground" data-testid="text-contact-location">Oxford, United Kingdom</span>
+                </div>
+              </div>
+              
+              {/* Social Icons */}
+              <div className="flex space-x-4 mt-8">
+                <a 
+                  href="#" 
+                  className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-colors"
+                  data-testid="link-linkedin"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-colors"
+                  data-testid="link-twitter"
+                >
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-colors"
+                  data-testid="link-email"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+            
+            {/* Enquiry Form */}
+            <div>
+              <h3 className="text-2xl font-serif font-semibold text-primary mb-6" data-testid="text-form-title">Send us a Message</h3>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" data-testid="form-contact">
+                  <div className="grid grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="firstName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input 
+                              placeholder="First Name" 
+                              {...field}
+                              data-testid="input-first-name"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="lastName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input 
+                              placeholder="Last Name" 
+                              {...field}
+                              data-testid="input-last-name"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input 
+                            type="email"
+                            placeholder="Email Address" 
+                            {...field}
+                            data-testid="input-email"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input 
+                            type="tel"
+                            placeholder="Phone Number (optional)" 
+                            {...field}
+                            data-testid="input-phone"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Textarea 
+                            placeholder="Tell us about your coaching needs..." 
+                            rows={4}
+                            className="resize-none"
+                            {...field}
+                            data-testid="input-message"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3"
+                    disabled={contactMutation.isPending}
+                    data-testid="button-send-message"
+                  >
+                    {contactMutation.isPending ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
+              </Form>
+            </div>
+          </div>
+          
+          {/* Footer Bottom */}
+          <div className="border-t border-border mt-12 pt-8 text-center">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <p className="text-muted-foreground" data-testid="text-copyright">
+                © 2024 The Oxford Coaching Partnership. All rights reserved.
+              </p>
+              <div className="flex space-x-6">
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-privacy">
+                  Privacy Policy
+                </a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-terms">
+                  Terms of Service
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
