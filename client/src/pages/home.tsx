@@ -180,13 +180,14 @@ export default function Home() {
       </nav>
 
       {/* Hero Banner */}
-      <section className="relative h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center text-center -mt-20 bg-gray-100">
+      <section className="relative h-[500px] md:h-[650px] lg:h-[750px] flex items-center justify-center text-center -mt-20 bg-gray-100">
         <div 
           className="absolute inset-0 bg-contain bg-center bg-no-repeat" 
           style={{
             backgroundImage: `url(${oxfordSkylineImg})`
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-100"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 text-balance" data-testid="text-hero-title">
             The Oxford Coaching Partnership
