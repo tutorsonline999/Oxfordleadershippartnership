@@ -214,7 +214,7 @@ export default function Home() {
             {/* Dr Ben Schubert */}
             <Card className="hover:shadow-lg transition-shadow" data-testid="card-coach-ben">
               <CardContent className="p-8">
-                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-muted border-4 border-accent">
                   <img 
                     src={benSchubertImg} 
                     alt="Dr Ben Schubert" 
@@ -239,7 +239,7 @@ export default function Home() {
             {/* Kitty McWilliam */}
             <Card className="hover:shadow-lg transition-shadow" data-testid="card-coach-kitty">
               <CardContent className="p-8">
-                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-muted border-4 border-accent">
                   <img 
                     src={kittyMcWilliamImg} 
                     alt="Kitty McWilliam" 
