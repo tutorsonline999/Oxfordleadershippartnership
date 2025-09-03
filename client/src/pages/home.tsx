@@ -180,7 +180,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Banner */}
-      <section className="relative h-[350px] md:h-[450px] lg:h-[500px] flex items-center justify-center text-center -mt-20 bg-background">
+      <section className="relative h-[300px] md:h-[380px] lg:h-[420px] flex items-center justify-center text-center -mt-20 bg-background">
         <div 
           className="absolute inset-0 bg-contain bg-center bg-no-repeat" 
           style={{
@@ -199,7 +199,7 @@ export default function Home() {
       </section>
 
       {/* Who We Are */}
-      <section id="about" className="pt-8 pb-16 bg-background">
+      <section id="about" className="pt-4 pb-12 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block border-2 border-light-gold px-8 py-4 mb-6">
