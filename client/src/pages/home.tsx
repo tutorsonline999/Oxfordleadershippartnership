@@ -356,17 +356,9 @@ export default function Home() {
                           "The coaching sessions provided me with invaluable insights into my leadership style and helped me navigate a complex organizational restructure with confidence."
                         </p>
                       </div>
-                      <div className="flex items-center justify-center">
-                        <img 
-                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
-                          alt="Client testimonial" 
-                          className="w-12 h-12 rounded-full object-cover mr-4"
-                          data-testid="img-testimonial-1"
-                        />
-                        <div>
-                          <p className="font-semibold text-foreground" data-testid="text-testimonial-1-name">James Richardson</p>
-                          <p className="text-sm text-muted-foreground" data-testid="text-testimonial-1-title">CEO, Financial Services</p>
-                        </div>
+                      <div className="text-center">
+                        <p className="font-semibold text-foreground" data-testid="text-testimonial-1-name">James Richardson</p>
+                        <p className="text-sm text-muted-foreground" data-testid="text-testimonial-1-title">CEO, Financial Services</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -382,17 +374,9 @@ export default function Home() {
                           "Working with The Oxford Coaching Partnership was transformational. Their approach is both deeply professional and genuinely supportive."
                         </p>
                       </div>
-                      <div className="flex items-center justify-center">
-                        <img 
-                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
-                          alt="Client testimonial" 
-                          className="w-12 h-12 rounded-full object-cover mr-4"
-                          data-testid="img-testimonial-2"
-                        />
-                        <div>
-                          <p className="font-semibold text-foreground" data-testid="text-testimonial-2-name">Sarah Mitchell</p>
-                          <p className="text-sm text-muted-foreground" data-testid="text-testimonial-2-title">Director, Healthcare</p>
-                        </div>
+                      <div className="text-center">
+                        <p className="font-semibold text-foreground" data-testid="text-testimonial-2-name">Sarah Mitchell</p>
+                        <p className="text-sm text-muted-foreground" data-testid="text-testimonial-2-title">Director, Healthcare</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -408,17 +392,9 @@ export default function Home() {
                           "The walking coaching sessions were particularly effective - the combination of movement and conversation unlocked new perspectives I hadn't considered."
                         </p>
                       </div>
-                      <div className="flex items-center justify-center">
-                        <img 
-                          src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
-                          alt="Client testimonial" 
-                          className="w-12 h-12 rounded-full object-cover mr-4"
-                          data-testid="img-testimonial-3"
-                        />
-                        <div>
-                          <p className="font-semibold text-foreground" data-testid="text-testimonial-3-name">Michael Thompson</p>
-                          <p className="text-sm text-muted-foreground" data-testid="text-testimonial-3-title">Managing Partner, Consulting</p>
-                        </div>
+                      <div className="text-center">
+                        <p className="font-semibold text-foreground" data-testid="text-testimonial-3-name">Michael Thompson</p>
+                        <p className="text-sm text-muted-foreground" data-testid="text-testimonial-3-title">Managing Partner, Consulting</p>
                       </div>
                     </CardContent>
                   </Card>
