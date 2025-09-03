@@ -113,4 +113,8 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  .border-light-gold {
+    border-color: hsl(38, 45%, 65%);
+  }
 }

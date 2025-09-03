@@ -202,7 +202,7 @@ export default function Home() {
       <section id="about" className="pt-2 pb-20 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block border-4 border-accent px-8 py-4 mb-6">
+            <div className="inline-block border-4 border-light-gold px-8 py-4 mb-6">
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary m-0" data-testid="text-about-title">Who We Are</h2>
             </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" data-testid="text-about-description">
@@ -268,7 +268,7 @@ export default function Home() {
       <section id="services" className="py-20 bg-muted/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block border-4 border-accent px-8 py-4 mb-6">
+            <div className="inline-block border-4 border-light-gold px-8 py-4 mb-6">
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary m-0" data-testid="text-services-title">What We Offer</h2>
             </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" data-testid="text-services-description">
@@ -342,7 +342,7 @@ export default function Home() {
       <section id="testimonials" className="py-20 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block border-4 border-accent px-8 py-4 mb-6">
+            <div className="inline-block border-4 border-light-gold px-8 py-4 mb-6">
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary m-0" data-testid="text-testimonials-title">What Our Clients Say</h2>
             </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" data-testid="text-testimonials-description">
