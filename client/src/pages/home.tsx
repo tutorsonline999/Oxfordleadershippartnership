@@ -191,13 +191,6 @@ export default function Home() {
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed" data-testid="text-hero-tagline">
             Empowering leaders through expert coaching and Oxford values
           </p>
-          <Button 
-            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl"
-            onClick={() => scrollToSection('contact')}
-            data-testid="button-discovery-call"
-          >
-            Arrange a Discovery Call
-          </Button>
         </div>
       </section>
 
