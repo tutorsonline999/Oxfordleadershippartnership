@@ -243,7 +243,7 @@ export default function Home() {
                   <img 
                     src={kittyMcWilliamImg} 
                     alt="Kitty McWilliam" 
-                    className="w-full h-full object-cover object-[center_70%]"
+                    className="w-full h-full object-cover object-[center_80%]"
                     data-testid="img-coach-kitty"
                   />
                 </div>
