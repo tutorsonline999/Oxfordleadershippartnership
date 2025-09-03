@@ -188,6 +188,7 @@ export default function Home() {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% via-background/5 via-92% via-background/20 via-96% to-background"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-100/30 via-blue-50/50 to-white"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 text-balance text-center" data-testid="text-hero-title">
             The Oxford <span className="text-white">Coaching</span> Partnership
