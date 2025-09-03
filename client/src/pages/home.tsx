@@ -94,7 +94,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex-shrink-0">
@@ -194,7 +194,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 text-balance" data-testid="text-hero-title">
             The Oxford Coaching Partnership
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed" data-testid="text-hero-tagline">
+          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed" data-testid="text-hero-tagline">
             EMPOWERING PEOPLE TO LEAD WITH CLARITY, CONFIDENCE, AND PURPOSE.
           </p>
         </div>
