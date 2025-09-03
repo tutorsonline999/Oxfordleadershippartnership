@@ -149,33 +149,35 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    opacity: 0.15;
-    background-color: hsl(45, 20%, 92%);
+    opacity: 0.08;
+    background-color: hsl(40, 15%, 94%);
     background-image: 
-      /* Main fleur-de-lis motifs */
-      radial-gradient(ellipse 4px 12px at 50% 25%, hsl(215, 85%, 25%) 0%, hsl(215, 85%, 25%) 45%, transparent 46%),
-      radial-gradient(ellipse 3px 6px at 40% 40%, hsl(215, 85%, 25%) 0%, hsl(215, 85%, 25%) 50%, transparent 51%),
-      radial-gradient(ellipse 3px 6px at 60% 40%, hsl(215, 85%, 25%) 0%, hsl(215, 85%, 25%) 50%, transparent 51%),
-      radial-gradient(ellipse 8px 4px at 50% 55%, hsl(215, 85%, 25%) 0%, hsl(215, 85%, 25%) 45%, transparent 46%),
-      radial-gradient(ellipse 2px 8px at 50% 75%, hsl(215, 85%, 25%) 0%, hsl(215, 85%, 25%) 50%, transparent 51%),
-      /* Cross and diamond elements */
-      linear-gradient(45deg, transparent 47%, hsl(215, 85%, 25%) 48%, hsl(215, 85%, 25%) 52%, transparent 53%),
-      linear-gradient(-45deg, transparent 47%, hsl(215, 85%, 25%) 48%, hsl(215, 85%, 25%) 52%, transparent 53%),
-      linear-gradient(0deg, transparent 47%, hsl(215, 85%, 25%) 48%, hsl(215, 85%, 25%) 52%, transparent 53%),
-      linear-gradient(90deg, transparent 47%, hsl(215, 85%, 25%) 48%, hsl(215, 85%, 25%) 52%, transparent 53%),
-      /* Small decorative dots */
-      radial-gradient(circle at 50% 50%, hsl(215, 85%, 25%) 1px, transparent 1.5px),
-      /* Diamond border elements */
-      polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      /* Fleur-de-lis crown */
+      radial-gradient(ellipse 3px 10px at 50% 15%, hsl(215, 75%, 35%) 0%, hsl(215, 75%, 35%) 50%, transparent 51%),
+      radial-gradient(ellipse 2px 6px at 45% 25%, hsl(215, 75%, 35%) 0%, hsl(215, 75%, 35%) 50%, transparent 51%),
+      radial-gradient(ellipse 2px 6px at 55% 25%, hsl(215, 75%, 35%) 0%, hsl(215, 75%, 35%) 50%, transparent 51%),
+      /* Fleur-de-lis stem */
+      radial-gradient(ellipse 1.5px 15px at 50% 45%, hsl(215, 75%, 35%) 0%, hsl(215, 75%, 35%) 50%, transparent 51%),
+      /* Fleur-de-lis base */
+      radial-gradient(ellipse 4px 3px at 45% 65%, hsl(215, 75%, 35%) 0%, hsl(215, 75%, 35%) 50%, transparent 51%),
+      radial-gradient(ellipse 4px 3px at 55% 65%, hsl(215, 75%, 35%) 0%, hsl(215, 75%, 35%) 50%, transparent 51%),
+      /* Four-pointed star */
+      linear-gradient(0deg, transparent 46%, hsl(215, 75%, 35%) 47%, hsl(215, 75%, 35%) 53%, transparent 54%),
+      linear-gradient(90deg, transparent 46%, hsl(215, 75%, 35%) 47%, hsl(215, 75%, 35%) 53%, transparent 54%),
+      /* Small diamonds */
+      radial-gradient(circle at 50% 50%, hsl(215, 75%, 35%) 1px, transparent 1.5px),
+      /* Border diamonds */
+      linear-gradient(45deg, transparent 48%, hsl(215, 75%, 35%) 49%, hsl(215, 75%, 35%) 51%, transparent 52%),
+      linear-gradient(-45deg, transparent 48%, hsl(215, 75%, 35%) 49%, hsl(215, 75%, 35%) 51%, transparent 52%);
     background-size: 
-      80px 80px, 80px 80px, 80px 80px, 80px 80px, 80px 80px,
-      12px 12px, 12px 12px, 12px 12px, 12px 12px,
-      40px 40px,
-      20px 20px;
+      60px 60px, 60px 60px, 60px 60px, 60px 60px, 60px 60px, 60px 60px,
+      20px 20px, 20px 20px,
+      120px 120px,
+      10px 10px, 10px 10px;
     background-position: 
-      40px 20px, 40px 20px, 40px 20px, 40px 20px, 40px 20px,
-      50px 30px, 50px 30px, 50px 30px, 50px 30px,
+      30px 10px, 30px 10px, 30px 10px, 30px 10px, 30px 10px, 30px 10px,
+      90px 40px, 90px 40px,
       0 0,
-      60px 60px;
+      100px 70px, 100px 70px;
   }
 }
