@@ -272,7 +272,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Executive Coaching */}
             <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1" data-testid="card-service-executive">
               <CardContent className="p-8">
@@ -306,6 +306,26 @@ export default function Home() {
                   Some people think better when they are walking and talking. There is something to be said about moving together in the same direction.
                 </p>
                 <button className="text-primary hover:text-secondary font-medium transition-colors inline-flex items-center gap-1" data-testid="button-walking-learn-more">
+                  Learn more <ArrowRight className="w-4 h-4" />
+                </button>
+              </CardContent>
+            </Card>
+            
+            {/* Training and Facilitation */}
+            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1" data-testid="card-service-training">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-serif font-semibold text-primary mb-4" data-testid="text-service-training-title">
+                  Training and Facilitation
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-6" data-testid="text-service-training-description">
+                  We design and deliver workshops and programmes tailored to the needs of organisations, teams, and individuals.
+                </p>
+                <button className="text-primary hover:text-secondary font-medium transition-colors inline-flex items-center gap-1" data-testid="button-training-learn-more">
                   Learn more <ArrowRight className="w-4 h-4" />
                 </button>
               </CardContent>
