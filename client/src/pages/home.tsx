@@ -100,7 +100,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-2 sm:px-4 lg:px-6">
           <div className="flex justify-between items-center py-4">
             <div className="flex-shrink-0 -ml-2">
-              <h1 className="text-lg font-semibold text-primary" style={{ fontFamily: 'Dancing Script, cursive' }}>The Oxford Coaching Partnership</h1>
+              <h1 className="text-lg font-sans font-semibold text-primary">The Oxford Coaching Partnership</h1>
             </div>
             <div className="hidden md:flex space-x-8">
               <button 
