@@ -178,7 +178,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Banner */}
-      <section className="relative h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center text-center">
+      <section className="relative h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center text-center -mt-20">
         <div 
           className="absolute inset-0 bg-contain bg-center bg-no-repeat" 
           style={{
@@ -196,7 +196,7 @@ export default function Home() {
       </section>
 
       {/* Who We Are */}
-      <section id="about" className="py-20 bg-background">
+      <section id="about" className="pt-12 pb-20 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6" data-testid="text-about-title">Who We Are</h2>
