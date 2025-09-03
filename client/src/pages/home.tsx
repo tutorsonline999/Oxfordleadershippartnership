@@ -199,7 +199,7 @@ export default function Home() {
       </section>
 
       {/* Who We Are */}
-      <section id="about" className="pt-12 pb-20 bg-background">
+      <section id="about" className="pt-6 pb-20 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6" data-testid="text-about-title">Who We Are</h2>
