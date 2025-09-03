@@ -98,11 +98,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex-shrink-0">
-              <div className="flex items-center space-x-1" data-testid="logo">
-                <span className="text-2xl font-serif font-bold text-primary bg-secondary px-2 py-1 rounded">O</span>
-                <span className="text-2xl font-serif font-bold text-secondary bg-primary px-2 py-1 rounded">C</span>
-                <span className="text-2xl font-serif font-bold text-primary bg-secondary px-2 py-1 rounded">P</span>
-              </div>
+              <h1 className="text-xl font-serif font-semibold text-primary">The Oxford Coaching Partnership</h1>
             </div>
             <div className="hidden md:flex space-x-8">
               <button 
