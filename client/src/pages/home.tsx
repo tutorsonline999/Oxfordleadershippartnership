@@ -12,6 +12,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 import { Menu, X, ArrowRight, Quote, Bus, MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
 import oxfordSkylineImg from "@/assets/oxford-skyline.jpg";
+import benSchubertImg from "@/assets/ben-schubert.jpg";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const contactFormSchema = z.object({
@@ -211,7 +212,7 @@ export default function Home() {
               <CardContent className="p-8">
                 <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
                   <img 
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                    src={benSchubertImg} 
                     alt="Dr Ben Schubert" 
                     className="w-full h-full object-cover"
                     data-testid="img-coach-ben"
