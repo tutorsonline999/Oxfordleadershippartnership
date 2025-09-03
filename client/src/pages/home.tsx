@@ -96,7 +96,12 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex-shrink-0">
-              <h1 className="text-xl font-serif font-semibold text-primary">The Oxford Coaching Partnership</h1>
+              <img 
+                src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=60" 
+                alt="The Oxford Coaching Partnership" 
+                className="h-10 w-auto"
+                data-testid="logo"
+              />
             </div>
             <div className="hidden md:flex space-x-8">
               <button 
