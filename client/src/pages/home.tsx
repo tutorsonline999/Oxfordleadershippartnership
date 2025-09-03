@@ -200,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* Who We Are */}
-      <section id="about" className="pt-20 pb-20 bg-cream-blue fleur-pattern-bg">
+      <section id="about" className="pt-2 pb-20 bg-background fleur-pattern-bg">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block border-2 border-light-gold px-8 py-4 mb-6">
@@ -266,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* What We Offer */}
-      <section id="services" className="py-20 bg-background services-pattern">
+      <section id="services" className="py-20 bg-cream-blue services-pattern">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block border-2 border-light-gold px-8 py-4 mb-6">
