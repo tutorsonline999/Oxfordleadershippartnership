@@ -11,7 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 import { Menu, X, ArrowRight, Quote, Users, MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
-import oxfordHeroImg from "@/assets/oxford-hero.jpg";
+import oxfordSkylineImg from "@/assets/oxford-skyline.jpg";
 import benSchubertImg from "@/assets/ben-schubert.jpg";
 import kittyMcWilliamImg from "@/assets/kitty-mcwilliam.jpg";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
@@ -182,9 +182,9 @@ export default function Home() {
       {/* Hero Banner */}
       <section className="relative h-[420px] md:h-[550px] lg:h-[600px] flex items-center justify-center text-center -mt-20 bg-background">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat border-b-4 border-amber-500" 
+          className="absolute inset-0 bg-contain bg-center bg-no-repeat border-b-4 border-amber-500" 
           style={{
-            backgroundImage: `url(${oxfordHeroImg})`
+            backgroundImage: `url(${oxfordSkylineImg})`
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% via-background/5 via-92% via-background/20 via-96% to-background"></div>
