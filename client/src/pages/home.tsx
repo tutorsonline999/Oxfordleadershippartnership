@@ -227,7 +227,7 @@ export default function Home() {
                   Dr Ben Schubert
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6" data-testid="text-coach-ben-bio">
-                  I believe everyone deserves to be successful and fulfilled in their work. I work with leaders at pivotal moments in their professional lives - whether they are navigating career transitions, managing complex organisational challenges, or seeking alignment between their career and personal life. Through coaching, I help my clients unlock clarity, resilience, and direction.
+                  I believe everyone deserves to be successful and fulfilled in their work. I work with leaders at pivotal moments in their professional lives, whether they are navigating career transitions, managing complex organisational challenges, or seeking alignment between their career and personal life. Through coaching, I help my clients unlock clarity, resilience, and direction.
                 </p>
                 <div className="text-center">
                   <button className="text-primary hover:text-secondary font-medium transition-colors border-b border-transparent hover:border-primary inline-flex items-center gap-1" data-testid="button-ben-profile">
@@ -252,7 +252,7 @@ export default function Home() {
                   Kitty McWilliam
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6" data-testid="text-coach-kitty-bio">
-                  I combine experience from diverse sectors—including higher education, healthcare, and global business—with a passion for enabling people to flourish. I believe that when people feel supported and empowered, they not only grow as individuals but also strengthen the teams and organisations around them.
+                  I combine experience from diverse sectors, including higher education, healthcare, and global business, with a passion for enabling people to flourish. I believe that when people feel supported and empowered, they not only grow as individuals but also strengthen the teams and organisations around them.
                 </p>
                 <div className="text-center">
                   <button className="text-primary hover:text-secondary font-medium transition-colors border-b border-transparent hover:border-primary inline-flex items-center gap-1" data-testid="button-kitty-profile">
@@ -277,7 +277,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {/* Executive Coaching */}
             <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1" data-testid="card-service-executive">
               <CardContent className="p-8">
@@ -287,12 +287,9 @@ export default function Home() {
                 <h3 className="text-2xl font-serif font-semibold text-primary mb-4" data-testid="text-service-executive-title">
                   Executive Coaching
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6" data-testid="text-service-executive-description">
+                <p className="text-muted-foreground leading-relaxed" data-testid="text-service-executive-description">
                   We offer online as well as in-person coaching for executives at all levels to help them master the challenges in their professional personal lives.
                 </p>
-                <button className="text-primary hover:text-secondary font-medium transition-colors inline-flex items-center gap-1" data-testid="button-executive-learn-more">
-                  Learn more <ArrowRight className="w-4 h-4" />
-                </button>
               </CardContent>
             </Card>
             
@@ -307,12 +304,9 @@ export default function Home() {
                 <h3 className="text-2xl font-serif font-semibold text-primary mb-4" data-testid="text-service-walking-title">
                   Walking Coaching
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6" data-testid="text-service-walking-description">
+                <p className="text-muted-foreground leading-relaxed" data-testid="text-service-walking-description">
                   Some people think better when they are walking and talking. There is something to be said about moving together in the same direction.
                 </p>
-                <button className="text-primary hover:text-secondary font-medium transition-colors inline-flex items-center gap-1" data-testid="button-walking-learn-more">
-                  Learn more <ArrowRight className="w-4 h-4" />
-                </button>
               </CardContent>
             </Card>
             
@@ -327,12 +321,26 @@ export default function Home() {
                 <h3 className="text-2xl font-serif font-semibold text-primary mb-4" data-testid="text-service-training-title">
                   Training and Facilitation
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6" data-testid="text-service-training-description">
+                <p className="text-muted-foreground leading-relaxed" data-testid="text-service-training-description">
                   We design and deliver workshops and programmes tailored to the needs of organisations, teams, and individuals.
                 </p>
-                <button className="text-primary hover:text-secondary font-medium transition-colors inline-flex items-center gap-1" data-testid="button-training-learn-more">
-                  Learn more <ArrowRight className="w-4 h-4" />
-                </button>
+              </CardContent>
+            </Card>
+            
+            {/* Interview Coaching */}
+            <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1" data-testid="card-service-interview">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-serif font-semibold text-primary mb-4" data-testid="text-service-interview-title">
+                  Interview Coaching
+                </h3>
+                <p className="text-muted-foreground leading-relaxed" data-testid="text-service-interview-description">
+                  We offer expert coaching to support every step of your job application journey, from writing applications to interview preparation. Through tailored feedback and a clear development plan, we help you build confidence, improve performance, and close the gap between where you are now and where you want to be.
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -443,10 +451,6 @@ export default function Home() {
                 <div className="flex items-center">
                   <Mail className="text-secondary mr-3 w-5 h-5" />
                   <span className="text-muted-foreground" data-testid="text-contact-email">info@oxfordcoachingpartnership.com</span>
-                </div>
-                <div className="flex items-center">
-                  <Phone className="text-secondary mr-3 w-5 h-5" />
-                  <span className="text-muted-foreground" data-testid="text-contact-phone">+44 1865 123 456</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="text-secondary mr-3 w-5 h-5" />
@@ -588,7 +592,7 @@ export default function Home() {
           <div className="border-t border-border mt-12 pt-8 text-center">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-muted-foreground" data-testid="text-copyright">
-                © 2024 The Oxford Coaching Partnership. All rights reserved.
+                © 2025 The Oxford Coaching Partnership. All rights reserved.
               </p>
               <div className="flex space-x-6">
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-privacy">
