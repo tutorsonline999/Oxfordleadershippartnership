@@ -11,7 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 import { Menu, X, ArrowRight, Quote, Users, MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
-import oxfordSkylineImg from "@assets/Screenshot 2025-09-04 at 16.44.04_1757000800762.png";
+import oxfordSkylineImg from "@/assets/oxford-skyline-hero.jpg";
 import benSchubertImg from "@/assets/ben-schubert.jpg";
 import kittyMcWilliamImg from "@/assets/kitty-mcwilliam.jpg";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
