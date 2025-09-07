@@ -369,12 +369,12 @@ export default function Home() {
                       <div className="mb-6">
                         <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
                         <p className="text-muted-foreground leading-relaxed italic text-lg" data-testid="text-testimonial-1-quote">
-                          "The coaching sessions provided me with invaluable insights into my leadership style and helped me navigate a complex organizational restructure with confidence."
+                          "They supported me through a tough job search, helping me clarify career goals, explore options, and gain insights. The flexibility and guidance were invaluable. I would certainly recommend."
                         </p>
                       </div>
                       <div className="text-center">
-                        <p className="font-semibold text-foreground" data-testid="text-testimonial-1-name">James Richardson</p>
-                        <p className="text-sm text-muted-foreground" data-testid="text-testimonial-1-title">CEO, Financial Services</p>
+                        <p className="font-semibold text-foreground" data-testid="text-testimonial-1-name">L&D Manager</p>
+                        <p className="text-sm text-muted-foreground" data-testid="text-testimonial-1-title">Football Association</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -387,12 +387,12 @@ export default function Home() {
                       <div className="mb-6">
                         <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
                         <p className="text-muted-foreground leading-relaxed italic text-lg" data-testid="text-testimonial-2-quote">
-                          "Working with The Oxford Coaching Partnership was transformational. Their approach is both deeply professional and genuinely supportive."
+                          "The coaching gave me the chance to step back and align my career with what I value most. That perspective has been invaluable, and I now feel much clearer about how I want to move forward."
                         </p>
                       </div>
                       <div className="text-center">
-                        <p className="font-semibold text-foreground" data-testid="text-testimonial-2-name">Sarah Mitchell</p>
-                        <p className="text-sm text-muted-foreground" data-testid="text-testimonial-2-title">Director, Healthcare</p>
+                        <p className="font-semibold text-foreground" data-testid="text-testimonial-2-name">Global Leader</p>
+                        <p className="text-sm text-muted-foreground" data-testid="text-testimonial-2-title">Deloitte</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -405,12 +405,30 @@ export default function Home() {
                       <div className="mb-6">
                         <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
                         <p className="text-muted-foreground leading-relaxed italic text-lg" data-testid="text-testimonial-3-quote">
-                          "The walking coaching sessions were particularly effective - the combination of movement and conversation unlocked new perspectives I hadn't considered."
+                          "What stood out was the ability to cut through complex challenges and offer a new perspective on thorny issues. The combination of sharp business insight and genuine people understanding made the coaching experience extremely valuable. I'd strongly endorse it to fellow leaders."
                         </p>
                       </div>
                       <div className="text-center">
-                        <p className="font-semibold text-foreground" data-testid="text-testimonial-3-name">Michael Thompson</p>
-                        <p className="text-sm text-muted-foreground" data-testid="text-testimonial-3-title">Managing Partner, Consulting</p>
+                        <p className="font-semibold text-foreground" data-testid="text-testimonial-3-name">CEO</p>
+                        <p className="text-sm text-muted-foreground" data-testid="text-testimonial-3-title">UK Startup</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+                
+                {/* Testimonial 4 */}
+                <CarouselItem>
+                  <Card data-testid="card-testimonial-4">
+                    <CardContent className="p-8">
+                      <div className="mb-6">
+                        <Quote className="text-3xl text-secondary mb-4 w-8 h-8" />
+                        <p className="text-muted-foreground leading-relaxed italic text-lg" data-testid="text-testimonial-4-quote">
+                          "From the start, the workshop design felt bespoke to our needs, giving us confidence we were in good hands. The careful preparation made the session engaging, effective, and successful."
+                        </p>
+                      </div>
+                      <div className="text-center">
+                        <p className="font-semibold text-foreground" data-testid="text-testimonial-4-name">Head of Department</p>
+                        <p className="text-sm text-muted-foreground" data-testid="text-testimonial-4-title">University of Oxford</p>
                       </div>
                     </CardContent>
                   </Card>
