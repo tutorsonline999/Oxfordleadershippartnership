@@ -199,6 +199,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Blue Grey Rectangle Under Hero */}
+      <div className="w-full h-6 bg-slate-400/20"></div>
+
       {/* Who We Are */}
       <section id="about" className="pt-2 pb-20 bg-background fleur-pattern-bg">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
