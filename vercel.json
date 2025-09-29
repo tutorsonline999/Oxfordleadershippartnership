@@ -10,18 +10,6 @@
       }
     }
   ],
-  "functions": {
-    "api/*.ts": {
-      "runtime": "@vercel/node@3.0.0"
-    }
-  },
   "routes": [
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
-}
+      "han
