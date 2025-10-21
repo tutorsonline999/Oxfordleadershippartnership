@@ -476,32 +476,6 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Social Icons */}
-              <div className="flex space-x-4 mt-8">
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-colors"
-                  data-testid="link-linkedin"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-colors"
-                  data-testid="link-twitter"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-colors"
-                  data-testid="link-email"
-                >
-                  <Mail className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
-          
           {/* Footer Bottom */}
           <div className="border-t border-border mt-12 pt-8 text-center">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
