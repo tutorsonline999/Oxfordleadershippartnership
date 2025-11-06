@@ -1,18 +1,12 @@
 import { useState, useEffect } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
-import { useMutation } from "@tanstack/react-query";
 import { Menu, X, ArrowRight, Quote, Users, MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
 import oxfordSkylineImg from "@assets/Website Hero Image_1757322430079.jpg";
 import benSchubertImg from "@/assets/ben-schubert.jpg";
 import kittyMcWilliamImg from "@/assets/kitty-mcwilliam.jpg";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+
 
 const contactFormSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
