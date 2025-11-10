@@ -265,7 +265,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary m-0" data-testid="text-services-title">What We Offer</h2>
             </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" data-testid="text-services-description">
-              Comprehensive coaching solutions tailored to your leadership journey
+              Comprehensive coaching solutions tailored to yeeeeerrrrrr leadership journey
             </p>
           </div>
           
