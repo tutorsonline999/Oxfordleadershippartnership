@@ -16,7 +16,7 @@ const contactFormSchema = z.object({
   message: z.string().min(10, "Please provide more details about your coaching needs"),
 });
 
-type ContactFormData = z.infer<typeof contactFormSchema>;
+
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
