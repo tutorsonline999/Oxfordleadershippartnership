@@ -1,8 +1,4 @@
 import { useState, useEffect } from "react";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -12,11 +8,6 @@ import {
   ArrowRight,
   Quote,
   Users,
-  MapPin,
-  Phone,
-  Mail,
-  Linkedin,
-  Twitter,
 } from "lucide-react";
 
 import oxfordSkylineImg from "@assets/Website Hero Image_1757322430079.jpg";
@@ -31,39 +22,8 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 
-// ----------------------
-// CONTACT FORM SCHEMA
-// ----------------------
-const contactFormSchema = z.object({
-  firstName: z.string().min(1, "First name is required"),
-  lastName: z.string().min(1, "Last name is required"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().optional(),
-  message: z
-    .string()
-    .min(10, "Please provide more details about your coaching needs"),
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
-
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { toast } = useToast();
-
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
-  });
-
-  const onSubmit = (data: ContactFormData) => {
-    toast({ title: "Message sent", description: "Thank you for contacting us!" });
-  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
